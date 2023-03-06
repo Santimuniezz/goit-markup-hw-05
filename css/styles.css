@@ -18,10 +18,11 @@
   --background-lite-color: #ffffff;
   --background-color-section-1-2-3: #e5e5e5;
   --customers-hover-focus-active: #9747ff;
+  --footer-hover-focus: #31d0aa;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -44,7 +45,7 @@ img {
 
 a {
   text-decoration: none;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 ul {
@@ -95,7 +96,7 @@ ul {
 
 .logo {
   color: var(--headings-color);
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
@@ -108,7 +109,7 @@ ul {
 
 .logo-blue {
   color: var(--active-links-color);
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
@@ -179,7 +180,9 @@ ul {
 /* Hero */
 
 .hero {
+  background-image: url(../images/hero-bg-image.png);
   background-color: var(--hero-image-background-color);
+  background: rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7);
   color: var(--background-lite-color);
   font-weight: 700;
   font-size: 56px;
@@ -220,7 +223,7 @@ ul {
 .btn {
   background-color: var(--active-links-color);
   color: var(--background-lite-color);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -258,7 +261,7 @@ ul {
 }
 
 .advantages-item::before {
-  content: "";
+  content: '';
   display: block;
   height: 112px;
   background: var(--light-mode-background-color);
@@ -399,7 +402,7 @@ ul {
 }
 
 .customers-title {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -451,7 +454,7 @@ ul {
 
 .logo-footer {
   color: var(--light-mode-background-color);
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 800;
   font-size: 18px;
   line-height: 1.16;
@@ -463,6 +466,49 @@ ul {
   line-height: 1.5;
   letter-spacing: 0.02em;
   margin-top: 16px;
+}
+
+.footer {
+  display: flex;
+}
+
+.footer-social-media {
+  display: inline-block;
+  padding-left: 120px;
+}
+
+.footer-social-text {
+  color: var(--background-lite-color);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.footer-social-list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+}
+
+.footer-social-link {
+  display: block;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus,
+.footer-social-link:active {
+  background-color: var(--valid-fields-color);
+}
+.footer-social-icon {
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
 }
 
 /* Portfolio*/
@@ -484,7 +530,7 @@ ul {
   background-color: var(--light-mode-background-color);
   color: var(--active-links-color);
   border-color: var(--subtle-background-color);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -515,6 +561,14 @@ ul {
   flex-basis: calc((100% - 48px) / 3);
 }
 
+.portfolio-item:hover,
+.portfolio-item:focus,
+.portfolio-item:active {
+  border: 1px solid var(--light-mode-background-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
 .portfolio-caption {
   padding: 32px 15px 31px 15px;
   border: 1px solid var(--subtle-background-color);
@@ -523,7 +577,7 @@ ul {
 
 .main-title {
   color: var(--overlay-color);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
