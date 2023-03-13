@@ -19,10 +19,11 @@
   --background-color-section-1-2-3: #e5e5e5;
   --customers-hover-focus-active: #9747ff;
   --footer-hover-focus: #31d0aa;
+  --modal-form: #fcfcfc;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -45,7 +46,7 @@ img {
 
 a {
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 ul {
@@ -96,7 +97,7 @@ ul {
 
 .logo {
   color: var(--headings-color);
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
@@ -109,7 +110,7 @@ ul {
 
 .logo-blue {
   color: var(--active-links-color);
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
@@ -122,6 +123,7 @@ ul {
 
 .link-item {
   margin-right: 40px;
+  position: relative;
 }
 
 .link-item:last-child {
@@ -149,12 +151,34 @@ ul {
   display: flex;
 }
 
+.current-page {
+  color: var(--active-links-color);
+}
+
+.current-page::after {
+  content: "";
+  background-color: var(--active-links-color);
+  border-radius: 2px;
+  height: 4px;
+  width: 100%;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: -25px;
+}
+
 .link {
   color: var(--headings-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  text-decoration: none;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
 }
 
 .link:hover,
@@ -170,6 +194,10 @@ ul {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
 }
 
 .link-to:hover,
@@ -223,7 +251,7 @@ ul {
 .btn {
   background-color: var(--active-links-color);
   color: var(--background-lite-color);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -233,6 +261,10 @@ ul {
   padding: 16px 32px;
   border-radius: 4px;
   border: none;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
 }
 
 .btn:hover,
@@ -243,6 +275,66 @@ ul {
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   border: 1px;
+}
+
+/* Modal */
+
+.modal {
+  fill: var(--overlay-color);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-hiden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.modal,
+.is-hidden,
+.modal-form {
+  transform: scale(0.9);
+}
+
+.modal-form {
+  background-color: var(--modal-form);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 408px;
+  height: 576px;
+  padding: 24px;
+  transform: scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close {
+  width: 24px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.modal-svg {
+  padding: 7px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--subtle-background-color);
+}
+
+.modal-svg:hover,
+.modal-svg:focus {
+  fill: #fff;
+  background-color: var(--ctas-color);
 }
 
 /* Section 1 */
@@ -261,7 +353,7 @@ ul {
 }
 
 .advantages-item::before {
-  content: '';
+  content: "";
   display: block;
   height: 112px;
   background: var(--light-mode-background-color);
@@ -402,7 +494,7 @@ ul {
 }
 
 .customers-title {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -454,7 +546,7 @@ ul {
 
 .logo-footer {
   color: var(--light-mode-background-color);
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
   line-height: 1.16;
@@ -530,7 +622,7 @@ ul {
   background-color: var(--light-mode-background-color);
   color: var(--active-links-color);
   border-color: var(--subtle-background-color);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -540,6 +632,10 @@ ul {
   padding: 12px 24px;
   border: 1px solid var(--subtle-background-color);
   border-radius: 4px;
+  transition-property: background-color, box-shadow, border-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
 }
 
 .btn-page:hover,
@@ -561,6 +657,23 @@ ul {
   flex-basis: calc((100% - 48px) / 3);
 }
 
+.portfolio-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--active-links-color);
+  transform: translateY(100%);
+  transition: transform 250ms ease;
+  padding: 40px 32px;
+  color: var(--light-mode-background-color);
+}
+
+.portfolio-overlay {
+  transform: translateY(0%);
+}
+
 .portfolio-item:hover,
 .portfolio-item:focus,
 .portfolio-item:active {
@@ -569,15 +682,32 @@ ul {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+.portfolio-link {
+  display: block;
+  text-decoration: none;
+  color: var(--body-text-color);
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
+}
+
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+}
+
 .portfolio-caption {
   padding: 32px 15px 31px 15px;
   border: 1px solid var(--subtle-background-color);
   border-top: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .main-title {
   color: var(--overlay-color);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
