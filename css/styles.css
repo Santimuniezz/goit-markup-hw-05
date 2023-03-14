@@ -20,6 +20,7 @@
   --customers-hover-focus-active: #9747ff;
   --footer-hover-focus: #31d0aa;
   --modal-form: #fcfcfc;
+  --modal-overlay: #2e2f4266;
 }
 
 body {
@@ -303,10 +304,10 @@ ul {
 }
 
 .modal-form {
-  position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
   background-color: var(--modal-form);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -314,7 +315,8 @@ ul {
   width: 408px;
   height: 576px;
   padding: 24px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close {
@@ -670,7 +672,6 @@ ul {
   padding: 40px 32px;
   color: var(--light-mode-background-color);
 }
-
 
 .portfolio-link:hover .portfolio-overlay,
 .portfolio-link:focus .portfolio-overlay {
