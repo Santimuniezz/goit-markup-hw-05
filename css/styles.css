@@ -298,9 +298,7 @@ ul {
   opacity: 0;
 }
 
-.modal,
-.is-hidden,
-.modal-form {
+.modal.is-hidden .modal-form {
   transform: scale(0.9);
 }
 
@@ -674,9 +672,6 @@ ul {
   color: var(--light-mode-background-color);
 }
 
-.portfolio-overlay {
-  transform: translateY(0%);
-}
 
 .portfolio-link:hover .portfolio-overlay,
 .portfolio-link:focus .portfolio-overlay {
